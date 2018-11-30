@@ -72,11 +72,12 @@ namespace PoohAPI.Logic.Reviews.Services
             parameters.Add("@datum", DateTime.Now);
             parameters.Add("@status", 0);
             parameters.Add("@bevestigdDoor", 0);
+            parameters.Add("@isReview", isReview);
 
             string query = "INSERT INTO reg_reviews (review_bedrijf_id, review_student_id" +
                 ", review_sterren, review_geschreven, review_anoniem, review_datum" +
-                ", review_status, review_status_bevestigd_door) " +
-                "VALUES (@bedrijfId, @studentId, @sterren, @geschreven, @anoniem, @datum, @status, @bevestigdDoor);" +
+                ", review_status, review_status_bevestigd_door, review_is_review) " +
+                "VALUES (@bedrijfId, @studentId, @sterren, @geschreven, @anoniem, @datum, @status, @bevestigdDoor, @isReview);" +
                 "SELECT LAST_INSERT_ID()";
 
             var createdReviewId = _reviewRepository.PostReview(query, parameters);

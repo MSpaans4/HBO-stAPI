@@ -40,7 +40,8 @@ company_schema = {
                     'description' : {'type' : 'string'}, 
                     'emailAddress' : {'type' : 'string'},
                     'website' : {'type' : 'string'}, 
-                    'socialLinkLinkedin' : {'type' : 'string'}, 
+                    'socialLinkLinkedin' : {'type' : 'string'},
+                    'telefoon' : {'type' : 'string'},
                     'id' : {'type' : 'integer'}, 
                     'name' : {'type' : 'string'}, 
                     'logoPath' : {'type' : 'string'}, 
@@ -78,7 +79,8 @@ review_schema = {
                     'verifiedReview' : {'type' : 'integer'},
 					'verifiedBy' : {'type' : 'integer'},
 					'verificationDate' : {'type' : 'string'},
-					'locked' : {'type' : 'boolean'}
+					'locked' : {'type' : 'boolean'},
+                    'isReview' : {'type' : 'boolean'}
                 }
 
 major_schema = {
