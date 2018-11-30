@@ -117,7 +117,7 @@ namespace PoohAPI.Logic.Companies.Services
             this.queryBuilder.AddSelect(@"b.bedrijf_id, b.bedrijf_handelsnaam, b.bedrijf_vestiging_straat, bedrijf_vestiging_huisnr, 
                     b.bedrijf_vestiging_toev, b.bedrijf_vestiging_postcode, b.bedrijf_vestiging_plaats,
                     b.bedrijf_vestiging_land, l.land_naam, b.bedrijf_logo, b.bedrijf_breedtegraad,
-                    b.bedrijf_lengtegraad, GROUP_CONCAT(DISTINCT o.opl_naam) as opleidingen");
+                    b.bedrijf_lengtegraad, b.bedrijf_telefoon, GROUP_CONCAT(DISTINCT o.opl_naam) as opleidingen");
             this.queryBuilder.AddSelect(@" 
                     IF(r.review_sterren IS NULL, 0,
                             CASE WHEN COUNT(r.review_sterren) > 4

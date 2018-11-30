@@ -12,5 +12,6 @@ namespace PoohAPI.Logic.Common.Models
         public string EmailAddress { get; set; }
         public string Website { get; set; }
         public string SocialLinkLinkedin { get; set; }
+        public string Telefoon { get; set; }
     }
 }

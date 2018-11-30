@@ -29,5 +29,6 @@ namespace PoohAPI.Infrastructure.CompanyDB.Models
         public decimal average_reviews { get; set; }
         public double distance { get; set; }
         public string opleidingen { get; set; }
+        public string bedrijf_telefoon { get; set; }
     }
 }

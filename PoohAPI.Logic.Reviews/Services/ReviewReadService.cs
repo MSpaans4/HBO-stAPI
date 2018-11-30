@@ -32,7 +32,7 @@ namespace PoohAPI.Logic.Reviews.Services
 
             var query = "SELECT review_id, review_bedrijf_id, review_student_id, review_sterren" +
             ", review_geschreven, review_anoniem, review_datum, review_status" +
-            ", review_status_bevestigd_door " +
+            ", review_status_bevestigd_door, review_is_review " +
             "FROM reg_reviews " +
             "WHERE review_id = @id";            
 

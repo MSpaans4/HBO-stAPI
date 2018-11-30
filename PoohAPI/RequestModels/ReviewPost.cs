@@ -16,5 +16,7 @@ namespace PoohAPI.RequestModels
         public string WrittenReview { get; set; }
         [Required]
         public int Anonymous { get; set; }
+        [Required]
+        public bool IsReview { get; set; }
     }
 }

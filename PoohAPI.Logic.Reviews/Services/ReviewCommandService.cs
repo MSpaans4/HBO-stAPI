@@ -33,7 +33,7 @@ namespace PoohAPI.Logic.Reviews.Services
             _reviewRepository.DeleteReview(query, parameters);
         }
 
-        public Review UpdateReview(int reviewId, int companyId, int userId, int stars, string writtenReview, int anonymous, DateTime creationDate, int verifiedReview, int verifiedBy)
+        public Review UpdateReview(int reviewId, int companyId, int userId, int stars, string writtenReview, int anonymous, DateTime creationDate, int verifiedReview, int verifiedBy, bool isReview)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 
@@ -46,12 +46,13 @@ namespace PoohAPI.Logic.Reviews.Services
             parameters.Add("@creationDate", creationDate);
             parameters.Add("@verifiedReview", verifiedReview);
             parameters.Add("@verifiedBy", verifiedBy);
+            parameters.Add("@isReview", isReview);
 
             string query = "UPDATE reg_reviews SET review_id = @id" +
                 ", review_bedrijf_id = @companyId, review_student_id = @userId" +
                 ", review_sterren = @stars, review_geschreven = @writtenReview" +
                 ", review_anoniem = @anonymous, review_datum = @creationDate" +
-                ", review_status = @verifiedReview, review_status_bevestigd_door = @verifiedBy" +
+                ", review_status = @verifiedReview, review_status_bevestigd_door = @verifiedBy, review_is_review = @isReview " +
                 " WHERE review_id = @id;";
 
             _reviewRepository.UpdateReview(query, parameters);
@@ -59,7 +60,7 @@ namespace PoohAPI.Logic.Reviews.Services
             return _reviewReadService.GetReviewById(reviewId);
         }
 
-        public Review PostReview(int companyId, int userId, int stars, string writtenReview, int anonymous)
+        public Review PostReview(int companyId, int userId, int stars, string writtenReview, int anonymous, bool isReview)
         { 
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 
